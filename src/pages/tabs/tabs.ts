@@ -4,6 +4,7 @@ import { HomePage } from '../home/home';
 import { AboutPage } from '../about/about';
 import { ContactPage } from '../contact/contact';
 import { ImsVersionPage } from '../ims-version/ims-version';
+import { GalleryPage } from '../gallery/gallery';
 
 @Component({
   templateUrl: 'tabs.html'
@@ -15,6 +16,7 @@ export class TabsPage {
   tab2Root: any = AboutPage;
   tab3Root: any = ContactPage;
   tab4Root: any = ImsVersionPage;
+  tab5Root: any = GalleryPage;
   constructor() {
 
   }
