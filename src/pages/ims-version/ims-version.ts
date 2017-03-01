@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { ImsService } from '../../providers/ims-service';
+import { AlertController } from 'ionic-angular';
+import { FormBuilder, FormGroup } from '@angular/forms';
+
 
 
 /*
@@ -17,10 +20,28 @@ import { ImsService } from '../../providers/ims-service';
 export class ImsVersionPage {
 
   public version: string;
+  private credentials: FormGroup;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public imsService: ImsService) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public imsService: ImsService, public alertCtrl: AlertController, private formBuilder: FormBuilder) {
       console.log("Constructer called")
       this.version = "Loading..."
       this.imsService.getInfo().subscribe(info => this.version = info.version);
+      this.credentials = this.formBuilder.group({username: [''],password: ['']});
+   }
+
+   showImsVersion() { 
+     let username = this.credentials.value['username'];
+     let password = this.credentials.value['password'];
+     this.imsService.getInfo(username, password).subscribe(info => this.showImsVersionAlert(info.version));
+   }
+
+   showImsVersionAlert(version) {
+      this.version = version;
+      let alert = this.alertCtrl.create({
+        title: 'Ims Version!',
+        subTitle: 'Current Version: ' + this.version,
+        buttons: ['OK']
+      });
+      alert.present()
    }
 }

@@ -14,5 +14,25 @@
 
 
 <ion-content padding>
-    {{version}}
+  <form [formGroup]="credentials" (ngSubmit)="showImsVersion()">
+    <ion-list>
+      <ion-item>
+        <ion-label fixed>Username</ion-label>
+        <ion-input type="text" value="" formControlName="username"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label fixed>Password</ion-label>
+        <ion-input type="password" formControlName="password"></ion-input>
+      </ion-item>
+    </ion-list>
+    <div padding>
+      <button ion-button>Show ImsVersion</button>
+    </div>
+  </form>
+  {{version}}
+  
+
+  
+  
+ 
 </ion-content>

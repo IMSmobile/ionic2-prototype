@@ -17,11 +17,11 @@ export class ImsService {
   constructor(public http: Http) {
   }
 
-  getInfo(): Observable<Info>  {
+  getInfo(username="admin", password = "admin"): Observable<Info>  {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Allow-Control-Allow-Origin', '*');
-    headers.append("Authorization", "Basic " + btoa("admin:admin"));
+    headers.append("Authorization", "Basic " + btoa(username + ":" + password));
     return this.http.get("http://mars.imagic.ch:3171/rest/info", {headers: headers}).map(res => res.json());    
   }
 
