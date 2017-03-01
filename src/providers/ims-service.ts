@@ -17,12 +17,12 @@ export class ImsService {
   constructor(public http: Http) {
   }
 
-  getInfo(username="admin", password = "admin"): Observable<Info>  {
+  getInfo(serverBaseUrl="http://mars.imagic.ch:3171", username="admin", password = "admin"): Observable<Info>  {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Allow-Control-Allow-Origin', '*');
     headers.append("Authorization", "Basic " + btoa(username + ":" + password));
-    return this.http.get("http://mars.imagic.ch:3171/rest/info", {headers: headers}).map(res => res.json());    
+    return this.http.get(serverBaseUrl + "/rest/info", {headers: headers}).map(res => res.json());    
   }
 
 

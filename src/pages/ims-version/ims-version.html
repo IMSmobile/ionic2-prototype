@@ -17,6 +17,15 @@
   <form [formGroup]="credentials" (ngSubmit)="showImsVersion()">
     <ion-list>
       <ion-item>
+      <ion-label>IMS Rest Server</ion-label>
+        <ion-select formControlName="server">
+          <ion-option selected="true" value="http://mars.imagic.ch:3171">http://mars.imagic.ch:3171</ion-option>
+          <ion-option value="http://mars.imagic.ch:3164">http://mars.imagic.ch:3164</ion-option>
+          <ion-option value="http://mars.imagic.ch:3163">http://mars.imagic.ch:3163</ion-option>
+          <ion-option value="http://mars.imagic.ch:3162">http://mars.imagic.ch:3162</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
         <ion-label fixed>Username</ion-label>
         <ion-input type="text" value="" formControlName="username"></ion-input>
       </ion-item>

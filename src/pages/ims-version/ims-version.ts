@@ -26,13 +26,14 @@ export class ImsVersionPage {
       console.log("Constructer called")
       this.version = "Loading..."
       this.imsService.getInfo().subscribe(info => this.version = info.version);
-      this.credentials = this.formBuilder.group({username: [''],password: ['']});
+      this.credentials = this.formBuilder.group({username: [''],password: [''], server: ['']});
    }
 
    showImsVersion() { 
+     let server =  this.credentials.value['server'];
      let username = this.credentials.value['username'];
      let password = this.credentials.value['password'];
-     this.imsService.getInfo(username, password).subscribe(info => this.showImsVersionAlert(info.version));
+     this.imsService.getInfo(server, username, password).subscribe(info => this.showImsVersionAlert(info.version));
    }
 
    showImsVersionAlert(version) {
