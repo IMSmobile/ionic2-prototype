@@ -23,11 +23,16 @@ export class ImsService {
   }
 
   get(credential: Credential, page: string): Observable<any> {
+    let headers = this.getHeaders(credential); 
+    return this.http.get(credential.server + page, { headers: headers}).map(res => res.json());
+  }
+
+   getHeaders(credential: Credential): Headers {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Allow-Control-Allow-Origin', '*');
     headers.append("Authorization", "Basic " + btoa(credential.username + ":" + credential.password));
-    return this.http.get(credential.server + page, { headers: headers }).map(res => res.json());
+    return headers;
   }
 
   getInfo(credential: Credential): Observable<Info> {
