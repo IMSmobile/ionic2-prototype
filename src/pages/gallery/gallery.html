@@ -16,7 +16,9 @@
 <ion-content padding>
   <div class="gallery-button" text-center>
       <img [src]="imageSrc" />    
+    <p>Take a Picture</p>  
+    <ion-icon name="images" on-tap="takePicture()"></ion-icon>
+    <p>Choose from Gallery</p>  
     <ion-icon name="images" on-tap="openGallery()"></ion-icon>
-    <p>Choose a Photo</p>  
   </div>
 </ion-content>

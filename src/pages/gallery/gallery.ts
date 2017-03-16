@@ -22,6 +22,21 @@ export class GalleryPage {
     console.log('ionViewDidLoad GalleryPage');
   }
 
+  private takePicture():void {
+    let cameraOptions = {
+      destinationType: Camera.DestinationType.DATA_URL,
+      targetWidth: 1000,
+      targetHeight: 1000,
+      saveToPhotoAlbum : false
+    }
+
+    Camera.getPicture(cameraOptions).then((imageData) => {
+        this.imageSrc = "data:image/jpeg;base64," + imageData;
+    }, (err) => {
+        console.log(err);
+    });
+  }
+
   private openGallery (): void {
     let cameraOptions = {
       sourceType: Camera.PictureSourceType.PHOTOLIBRARY,
