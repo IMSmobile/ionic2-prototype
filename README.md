@@ -56,3 +56,9 @@ TBD
 
 #### CD
 RBD
+
+###  Dynamic Fields
+As we are using Angular we need to find a solutin within angular. It seems to be possbile but it might be tricky.
+See links
+http://stackoverflow.com/questions/31579909/add-more-button-for-generating-dynamic-form-inputs-using-ionic-framework
+http://stackoverflow.com/questions/15296949/how-can-i-use-angular-to-output-dynamic-form-fields
