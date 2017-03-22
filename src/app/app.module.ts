@@ -12,7 +12,13 @@ import { LocalStorage } from '../providers/local-storage';
 import { LoginPage } from '../pages/login/login';
 import { ImsVersionPage } from '../pages/ims-version/ims-version';
 import { TabsPage } from '../pages/tabs/tabs';
+import { CloudSettings, CloudModule } from '@ionic/cloud-angular';
 
+const cloudSettings: CloudSettings = {
+  'core': {
+    'app_id': 'f231fdcf'
+  }
+};
 
 @NgModule({
   declarations: [
@@ -26,7 +32,8 @@ import { TabsPage } from '../pages/tabs/tabs';
     GalleryPage  
   ],
   imports: [
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    CloudModule.forRoot(cloudSettings)
   ],
   bootstrap: [IonicApp],
   entryComponents: [
