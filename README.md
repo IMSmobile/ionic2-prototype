@@ -20,7 +20,7 @@ https://github.com/driftyco/ionic2/graphs/contributors
 https://github.com/driftyco/ionic/blob/master/CHANGELOG.md
 
 ## Ecosystem evaluation
-Ionic is free but prices can raise when using their serivce. The service thus is free in development but start to coast money in production -> https://ionic.io/pricing helps to estimate money
+
 
 
 ### Name global players using it (req 53) 
@@ -46,6 +46,8 @@ Cordova is Opensource Project licensed under the Apache License.
 Ionic has online desing tool (http://ionicframework.com/getting-started/) to earn money.
 
 Some features are in a paid license 2000 US$ per dev and year. 
+
+Ionic is free but prices can raise when using their serivce. They even have free service for development which later on coasts money when using ionc for deploy. For pricing see -> https://ionic.io/pricing helps to estimate money
 
 Some Examples
 - [Expo](https://expo.io/)
