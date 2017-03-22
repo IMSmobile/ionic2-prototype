@@ -57,6 +57,16 @@ TBD
 #### CD
 RBD
 
+### Loading Icon
+Ionic has a bunch of loading icon possiblities to inform the user that something is going on
+See http://ionicframework.com/docs/v2/api/components/loading/LoadingController/
+
+### Exception Handling / Global Exceptionhandling
+Default and Customaziable Error Handler http://ionicframework.com/docs/v2/api/util/IonicErrorHandler/c2/63196/3
+mplemented from Angulars Error Handler https://angular.io/docs/ts/latest/api/core/index/ErrorHandler-class.html
+
+Errors can be shown with for example http://ionicframework.com/docs/v2/api/components/alert/AlertController/
+
 ###  Dynamic Fields
 As we are using Angular we need to find a solutin within angular. It seems to be possbile but it might be tricky.
 See links
