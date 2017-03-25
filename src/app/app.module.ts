@@ -8,11 +8,12 @@ import { GalleryPage } from '../pages/gallery/gallery';
 import { AuthService } from '../providers/auth-service';
 import { ImsService } from '../providers/ims-service';
 import { LocalStorage } from '../providers/local-storage';
-
+import { Transfer, FileUploadOptions, TransferObject } from '@ionic-native/transfer';
 import { LoginPage } from '../pages/login/login';
 import { ImsVersionPage } from '../pages/ims-version/ims-version';
 import { TabsPage } from '../pages/tabs/tabs';
 import { CloudSettings, CloudModule } from '@ionic/cloud-angular';
+import { File } from '@ionic-native/file';
 
 const cloudSettings: CloudSettings = {
   'core': {
@@ -46,6 +47,6 @@ const cloudSettings: CloudSettings = {
     TabsPage,
     GalleryPage
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, AuthService, ImsService, LocalStorage]
+  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, AuthService, ImsService,File, LocalStorage, Transfer, ]
 })
 export class AppModule {}

@@ -46,7 +46,7 @@ export class LoginPage {
         this.localStore.setItem(this.storageKey, JSON.stringify(credential));
       },
       err => {
-        console.log(err);
+        console.log("My error:" + err);
       });;
   }
 }
