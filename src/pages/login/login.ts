@@ -19,7 +19,7 @@ export class LoginPage {
 
 
   constructor(public nav: NavController,public navParams: NavParams,public authService: AuthService, private formBuilder: FormBuilder, public localStore: LocalStorage) {
-      this.credentialForm = this.formBuilder.group({ username: [''], password: [''], server: ['http://sinv-56028.edu.hsr.ch'] });
+      this.credentialForm = this.formBuilder.group({ username: ['admin'], password: ['admin'], server: ['https://sinv-56028.edu.hsr.ch'] });
   }
 
   ionViewDidLoad() {
